@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://52.231.93.214:5000/api";
+const API_URL = "https://literacy-dapat-backend-zeta.vercel.app";
 
 export const loginUser = async (email, password) => {
     try {
