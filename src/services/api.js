@@ -9,7 +9,8 @@ const API_URL = "https://52.231.93.214";
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+        const response = await axios.post(`${API_URL}/auth/login`, { email, password }, 
+            {httpsAgent: agent});
         localStorage.setItem("token", response.data.token);
         return response;
     } catch (error) {
