@@ -1,8 +1,6 @@
 import axios from "axios";
 
-axios.defaults.httpsAgent = new (require("https").Agent)({  
-    rejectUnauthorized: false  
-});
+
 const API_URL = "https://52.231.93.214";
 
 export const loginUser = async (email, password) => {
