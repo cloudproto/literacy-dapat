@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = "https://52.231.93.214";
+const API_URL = "https://literacy-dapat.koreacentral.cloudapp.azure.com";
 
 export const loginUser = async (email, password) => {
     try {
