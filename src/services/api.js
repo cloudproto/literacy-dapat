@@ -1,12 +1,11 @@
 import axios from "axios";
 import https from 'https';
 
-const API_URL = "https://52.231.93.214";
-
 const agent = new https.Agent({
     rejectUnauthorized: false // 👈 Ignore SSL errors
 });
 
+const API_URL = "https://52.231.93.214";
 
 export const loginUser = async (email, password) => {
     try {
