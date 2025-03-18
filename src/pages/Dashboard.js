@@ -131,7 +131,7 @@ function Dashboard() {
                     </div>
                 ) : (
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60vh", fontSize: "18px", color: "#888" }}>
-                        No current assessments. Create one using the [+] icon at the top right!
+                        No current assessments. Create one using the [+] icon at the top right! Complete your Profile to start creaeting assessments.
                     </div>
                 )}
             </div>
