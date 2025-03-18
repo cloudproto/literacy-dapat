@@ -107,7 +107,7 @@ function Assessments() {
         setSaving(true);
         try {
             await createAssessment(user.token, formattedData);
-            alert("Assessment created successfully!");
+            alert(`Successfully created Assessment #${assessment.id}`);
             navigate("/dashboard");
         } catch (error) {
             alert(error.message || "Failed to create assessment.");

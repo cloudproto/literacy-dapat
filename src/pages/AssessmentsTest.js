@@ -124,7 +124,7 @@ function AssessmentsTest() {
                 <div className="dialog-overlay">
                     <div className="dialog-box">
                         <h3 style={{ textAlign: "center" }}>Congratulations!</h3>
-                        <p style={{ textAlign: "center" }}>You have completed the assessment.</p>
+                        <p style={{ textAlign: "center" }}>You have completed the assessment with a level of {assessment.level}</p>
                         <button onClick={() => navigate("/dashboard")} className="dialog-button confirm">OK</button>
                     </div>
                 </div>
