@@ -1,16 +1,13 @@
 import axios from "axios";
-import https from 'https';
 
-const agent = new https.Agent({
-    rejectUnauthorized: false // 👈 Ignore SSL errors
+axios.defaults.httpsAgent = new (require("https").Agent)({  
+    rejectUnauthorized: false  
 });
-
 const API_URL = "https://52.231.93.214";
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await axios.post(`${API_URL}/auth/login`, { email, password }, 
-            {httpsAgent: agent});
+        const response = await axios.post(`${API_URL}/auth/login`, { email, password });
         localStorage.setItem("token", response.data.token);
         return response;
     } catch (error) {
