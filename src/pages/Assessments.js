@@ -85,7 +85,7 @@ function Assessments() {
 
     const handleCreateAssessment = async () => {
         if (!user) return;
-
+    
         const requiredFields = ["studentAge", "studentGender", "studentGradeLevel", "studentRegion", "studentCity", "studentBarangay", "studentSchool"];
         for (const field of requiredFields) {
             if (!formData[field]) {
@@ -93,7 +93,7 @@ function Assessments() {
                 return;
             }
         }
-
+    
         const formattedData = {
             student_age: parseInt(formData.studentAge, 10),
             student_gender: formData.studentGender,
@@ -103,11 +103,15 @@ function Assessments() {
             student_barangay: formData.studentBarangay,
             student_school: formData.studentSchool
         };
-
+    
         setSaving(true);
         try {
-            await createAssessment(user.token, formattedData);
-            alert(`Successfully created Assessment #${assessment.id}`);
+            const response = await createAssessment(user.token, formattedData);
+            if (response && response.id) {
+                alert(`Successfully created Assessment #${response.id}`);
+            } else {
+                alert("Successfully created Assessment, but ID was not returned.");
+            }
             navigate("/dashboard");
         } catch (error) {
             alert(error.message || "Failed to create assessment.");
@@ -115,6 +119,7 @@ function Assessments() {
             setSaving(false);
         }
     };
+    
 
     if (loading) return <p>Loading...</p>;
 
