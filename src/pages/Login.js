@@ -45,7 +45,7 @@ function Login() {
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#f8f5fc" }}>
             <div style={{ width: "400px", padding: "20px", textAlign: "center", background: "white", borderRadius: "8px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}>
-                <HeadingLarge>Brigada Eskwela</HeadingLarge>
+                <HeadingLarge>Brigada Pagbasa Literacy Diagnostic and Proficiency Assessment Tool (DAPAT)</HeadingLarge>
                 <form onSubmit={handleLogin}>
                     <Input 
                         placeholder="Email"
